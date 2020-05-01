@@ -1,0 +1,14 @@
+num_processes=3
+num_resources=3
+
+% number of units per resource:
+1,1,1
+
+% the full matrix:
+
+1,0,0,1,0,0
+0,1,0,0,1,0
+0,0,1,0,0,1
+0,1,0,1,0,0
+0,0,1,0,1,0
+1,0,0,0,0,1
