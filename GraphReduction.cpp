@@ -81,9 +81,9 @@ void GraphReduction::Reduce() {
     }
     // if all procs removed, no deadlock
     if (remainingProcs == 0){
-        cout << "\nThis graph does not contain a deadlock!\n";
+        cout << "\nThis graph does not contain a deadlock!\n\n";
     } else { // if not, there is a deadlock
-        cout << "\nThis graph contains a deadlock.\n";
+        cout << "\nThis graph contains a deadlock.\n\n";
     }
     return;
 }
@@ -109,7 +109,7 @@ bool GraphReduction::Read_and_Init() {
     while(!fin.eof() && num_resources == -1) {
         getline(fin, buffer);
         // check for comments or blank line
-        if (buffer[0] != '%' && buffer[0] != '/n') {
+        if (buffer[0] != '%' && buffer[0] != '\n') {
             // get # processes
             if (buffer[4] == 'p' && buffer.length() > 3) {
                 j = 0; // track characters in case multi digit input is given
@@ -162,7 +162,7 @@ bool GraphReduction::Read_and_Init() {
     while(!fin.eof()) {
         // similar to before
         getline(fin, buffer);
-        if (buffer[0] != '%' && buffer[0] != '/n') {
+        if (buffer[0] != '%' && buffer[0] != '\n') {
             // find max units
             if (isdigit(buffer[0]) && foundAllocs == 0) {
                 j = 0;
@@ -236,7 +236,7 @@ bool GraphReduction::Read_and_Init() {
 
                             resGraph[j][k] = stoi(numBuffer, nullptr);
                             if (resGraph[j][k] > 0) {
-                                currAlloc[j]++;
+                                currAlloc[j] += resGraph[j][k];
                             }
                             k++;
                             numBuffer.clear();

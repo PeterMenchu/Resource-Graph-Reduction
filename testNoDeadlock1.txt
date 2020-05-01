@@ -1,0 +1,15 @@
+% testing loop with enough allocation space for one proc to immediately exit
+
+num_processes=4
+num_resources=4
+
+2,1,1,1
+
+1,0,0,0,1,0,0,0
+0,1,0,0,0,1,0,0
+0,0,1,0,0,0,1,0
+0,0,0,1,0,0,0,1
+0,1,0,0,1,0,0,0
+0,0,1,0,0,1,0,0
+0,0,0,1,0,0,1,0
+1,0,0,0,0,0,0,1
